@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 // Importing the other pages that we will be creating routes to
 import About from "./pages/About";
 import Login from "./pages/Login";
+import UserProfile from "./pages/UserProfile";
 
     // Step 2. Create a route object
     // createBrowserRouter is used to create the router for our application. 
@@ -25,6 +26,16 @@ const router = createBrowserRouter([
     {
       path: "/login",
       element: <Login />
+    },
+    //what if we want to dynamically rendere the components? Here's how
+    //Notice that we added /:id to the end of our path for our UserProfile route
+    //This notation creates a URL parameter — a segment of our URL that can change and that contains data we can use in our components.
+    //By including a URL parameter (or multiple parameters) in a route, we make that route dynamic — this single route can actually have many different URLs! 
+    //For example, the /profile/1, /profile/2, and /profile/3 URLs will all lead to the same page. 
+    //That page will just display different information depending on which URL is used!
+    {
+      path: "/profile/:id",
+      element: <UserProfile />
     }
 
   ]);
