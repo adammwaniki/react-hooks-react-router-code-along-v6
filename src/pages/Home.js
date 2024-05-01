@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
 import UserCard from "../components/UserCard";
+// Importing the NavBar component that has the NavLink with the prop called to which works like the hypertext reference
+import NavBar from "../components/NavBar";
+
+
 
 function Home() {
   const [users, setUsers] = useState([])
@@ -18,7 +22,7 @@ function Home() {
   return (
     <>
       <header>
-        {/* place NavBar here */}
+        <NavBar />
       </header>
       <main>
         <h1>Home!</h1>
