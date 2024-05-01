@@ -2,30 +2,43 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 // Step 1. Import react-router functions
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import routes from "./routes.js";
+
+const router = createBrowserRouter(routes);
+/*
 import Home from "./pages/Home";
 // Importing the other pages that we will be creating routes to
 import About from "./pages/About";
 import Login from "./pages/Login";
 import UserProfile from "./pages/UserProfile";
+import ErrorPage from "./pages/ErrorPage";
+
 
     // Step 2. Create a route object
     // createBrowserRouter is used to create the router for our application. 
     // We'll pass it an array of route objects as its argument. 
     // Each route object will have a routing path and a corresponding element to be rendered on that path.
-const router = createBrowserRouter([
+
+    const router = createBrowserRouter([
 
     {
       path: "/",
-      element: <Home />
+      element: <Home />,
+      // If we want to render a different element when an error occurs, we can use the errorElement property
+      // The errorElement can handle more than just bad URLs — it will redirect your app toward the provided Error component should any error occur within your main UI component! 
+      // For that reason, we'll want to make sure each of our routes has an appropriate errorElement
+      errorElement: <ErrorPage />
     }, 
     // Adding new routes to the array of route objects
     {
       path: "/about",
-      element: <About />
+      element: <About />,
+      errorElement: <ErrorPage />
     },
     {
       path: "/login",
-      element: <Login />
+      element: <Login />,
+      errorElement: <ErrorPage />
     },
     //what if we want to dynamically rendere the components? Here's how
     //Notice that we added /:id to the end of our path for our UserProfile route
@@ -35,10 +48,12 @@ const router = createBrowserRouter([
     //That page will just display different information depending on which URL is used!
     {
       path: "/profile/:id",
-      element: <UserProfile />
+      element: <UserProfile />,
+      errorElement: <ErrorPage />
     }
 
   ]);
+  */
   
   const root = ReactDOM.createRoot(document.getElementById("root"));
   // Step 3. Render the router
